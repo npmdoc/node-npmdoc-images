@@ -1,0 +1,1175 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/zhangyuanwei/node-images#readme">images (v3.0.0)</a>
+</h1>
+<h4>Cross-platform image decoder(png/jpeg/gif) and encoder(png/jpeg) for Node.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.images">module images</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image">
+            function <span class="apidocSignatureSpan">images.</span>Image
+            <span class="apidocSignatureSpan">(width, height)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.copyFromImage">
+            function <span class="apidocSignatureSpan">images.</span>copyFromImage
+            <span class="apidocSignatureSpan">(src, x, y, width, height)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.createImage">
+            function <span class="apidocSignatureSpan">images.</span>createImage
+            <span class="apidocSignatureSpan">(width, height)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.gc">
+            function <span class="apidocSignatureSpan">images.</span>gc
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.getUsedMemory">
+            function <span class="apidocSignatureSpan">images.</span>getUsedMemory
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.loadFromBuffer">
+            function <span class="apidocSignatureSpan">images.</span>loadFromBuffer
+            <span class="apidocSignatureSpan">(buffer, start, end)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.loadFromFile">
+            function <span class="apidocSignatureSpan">images.</span>loadFromFile
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.setGCThreshold">
+            function <span class="apidocSignatureSpan">images.</span>setGCThreshold
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.setLimit">
+            function <span class="apidocSignatureSpan">images.</span>setLimit
+            <span class="apidocSignatureSpan">(maxWidth, maxHeight)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.</span>TYPE_BMP</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.</span>TYPE_GIF</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.</span>TYPE_JPEG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.</span>TYPE_PNG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.</span>TYPE_RAW</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">images.</span>Image.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">images.</span>binding</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.images.Image">module images.Image</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.Image">
+            function <span class="apidocSignatureSpan">images.</span>Image
+            <span class="apidocSignatureSpan">(width, height)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.images.Image.prototype">module images.Image.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.copyFromImage">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>copyFromImage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.draw">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>draw
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.drawImage">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>drawImage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.encode">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>encode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.fill">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>fill
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.fillColor">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>fillColor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.height">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>height
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.loadFromBuffer">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>loadFromBuffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.resize">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>resize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.save">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>save
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.saveAsync">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>saveAsync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.size">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>size
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.toBuffer">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>toBuffer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.Image.prototype.width">
+            function <span class="apidocSignatureSpan">images.Image.prototype.</span>width
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.images.binding">module images.binding</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.binding.Image">
+            function <span class="apidocSignatureSpan">images.binding.</span>Image
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.images.binding.gc">
+            function <span class="apidocSignatureSpan">images.binding.</span>gc
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.binding.</span>TYPE_BMP</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.binding.</span>TYPE_GIF</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.binding.</span>TYPE_JPEG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.binding.</span>TYPE_PNG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.binding.</span>TYPE_RAW</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.binding.</span>maxHeight</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.binding.</span>maxWidth</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">images.binding.</span>usedMemory</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.images" id="apidoc.module.images">module images</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image" id="apidoc.element.images.Image">
+        function <span class="apidocSignatureSpan">images.</span>Image
+        <span class="apidocSignatureSpan">(width, height)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WrappedImage(width, height) {
+    if (!(this instanceof WrappedImage)) return new WrappedImage(width, height);
+    if (gcThreshold &amp;&amp; nextGCThreshold) {
+        if (images.getUsedMemory() &gt; nextGCThreshold) {
+            images.gc();
+            nextGCThreshold = images.getUsedMemory() + gcThreshold;
+        }
+    }
+    this._handle = new _Image(width, height);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.copyFromImage" id="apidoc.element.images.copyFromImage">
+        function <span class="apidocSignatureSpan">images.</span>copyFromImage
+        <span class="apidocSignatureSpan">(src, x, y, width, height)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyFromImage = function (src, x, y, width, height) {
+    return WrappedImage().copyFromImage(src, x, y, width, height);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+loadFromBuffer: function(buffer, start, end) {
+    this._handle.loadFromBuffer(buffer, start, end);
+},
+copyFromImage: function(img, x, y, width, height) {
+    if (img instanceof WrappedImage) {
+        img = img._handle;
+    }
+    this._handle.<span class="apidocCodeKeywordSpan">copyFromImage</span>(img, x, y, width, height);
+},
+fill: function(red, green, blue, alpha) {
+    this._handle.fillColor(red, green, blue, alpha);
+},
+draw: function(img, x, y) {
+    if (img instanceof WrappedImage) {
+        img = img._handle;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.createImage" id="apidoc.element.images.createImage">
+        function <span class="apidocSignatureSpan">images.</span>createImage
+        <span class="apidocSignatureSpan">(width, height)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createImage = function (width, height) {
+    return WrappedImage(width, height);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.gc" id="apidoc.element.images.gc">
+        function <span class="apidocSignatureSpan">images.</span>gc
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gc = function () {
+    return _images.gc();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Set the garbage collection threshold
+è®¾ç½®å›¾åƒå¤„ç†åº“è‡ªåŠ¨gcçš„é˜ˆå€¼(å½“*æ–°å¢ž*å†…å­˜ä½¿ç”¨è¶…è¿‡è¯¥é˜ˆå€¼æ—¶ï¼Œæ‰§è¡Œåžƒåœ¾å›žæ”¶)
+
+### images.getUsedMemory()
+Get used memory (in bytes)
+å¾—åˆ°å›¾åƒå¤„ç†åº“å&nbsp;ç”¨çš„å†…å­˜å¤§å°(å•ä½ä¸ºå­—èŠ‚)
+
+### images.<span class="apidocCodeKeywordSpan">gc</span>()
+Forced call garbage collection
+å¼ºåˆ¶è°ƒç”¨V8çš„åžƒåœ¾å›žæ”¶æœºåˆ¶
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.getUsedMemory" id="apidoc.element.images.getUsedMemory">
+        function <span class="apidocSignatureSpan">images.</span>getUsedMemory
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUsedMemory = function () {
+    return _images.usedMemory;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Set the limit size of each image
+è®¾ç½®åº“å¤„ç†å›¾ç‰‡çš„å¤§å°é™åˆ¶,è®¾ç½®åŽå¯¹æ‰€æœ‰æ–°çš„æ“ä½œç”Ÿæ•ˆ(å¦‚æžœè¶…é™åˆ™æŠ›å‡ºå¼‚å¸¸)
+
+### images.setGCThreshold(value)
+Set the garbage collection threshold
+è®¾ç½®å›¾åƒå¤„ç†åº“è‡ªåŠ¨gcçš„é˜ˆå€¼(å½“*æ–°å¢ž*å†…å­˜ä½¿ç”¨è¶…è¿‡è¯¥é˜ˆå€¼æ—¶ï¼Œæ‰§è¡Œåžƒåœ¾å›žæ”¶)
+
+### images.<span class="apidocCodeKeywordSpan">getUsedMemory</span>()
+Get used memory (in bytes)
+å¾—åˆ°å›¾åƒå¤„ç†åº“å&nbsp;ç”¨çš„å†…å­˜å¤§å°(å•ä½ä¸ºå­—èŠ‚)
+
+### images.gc()
+Forced call garbage collection
+å¼ºåˆ¶è°ƒç”¨V8çš„åžƒåœ¾å›žæ”¶æœºåˆ¶
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.loadFromBuffer" id="apidoc.element.images.loadFromBuffer">
+        function <span class="apidocSignatureSpan">images.</span>loadFromBuffer
+        <span class="apidocSignatureSpan">(buffer, start, end)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFromBuffer = function (buffer, start, end) {
+    return WrappedImage().loadFromBuffer(buffer, start, end);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+}
+this._handle = new _Image(width, height);
+}
+
+prototype = {
+loadFromBuffer: function(buffer, start, end) {
+    this._handle.<span class="apidocCodeKeywordSpan">loadFromBuffer</span>(buffer, start, end);
+},
+copyFromImage: function(img, x, y, width, height) {
+    if (img instanceof WrappedImage) {
+        img = img._handle;
+    }
+    this._handle.copyFromImage(img, x, y, width, height);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.loadFromFile" id="apidoc.element.images.loadFromFile">
+        function <span class="apidocSignatureSpan">images.</span>loadFromFile
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFromFile = function (file) {
+    return images.loadFromBuffer(fs.readFileSync(file));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.setGCThreshold" id="apidoc.element.images.setGCThreshold">
+        function <span class="apidocSignatureSpan">images.</span>setGCThreshold
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setGCThreshold = function (value) {
+    gcThreshold = value;
+    nextGCThreshold = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Get height for the image or set height of the image
+èŽ·å–æˆ–è®¾ç½®å›¾åƒé«˜åº¦
+
+### images.setLimit(width, height)
+Set the limit size of each image
+è®¾ç½®åº“å¤„ç†å›¾ç‰‡çš„å¤§å°é™åˆ¶,è®¾ç½®åŽå¯¹æ‰€æœ‰æ–°çš„æ“ä½œç”Ÿæ•ˆ(å¦‚æžœè¶…é™åˆ™æŠ›å‡ºå¼‚å¸¸)
+
+### images.<span class="apidocCodeKeywordSpan">setGCThreshold</span>(value)
+Set the garbage collection threshold
+è®¾ç½®å›¾åƒå¤„ç†åº“è‡ªåŠ¨gcçš„é˜ˆå€¼(å½“*æ–°å¢ž*å†…å­˜ä½¿ç”¨è¶…è¿‡è¯¥é˜ˆå€¼æ—¶ï¼Œæ‰§è¡Œåžƒåœ¾å›žæ”¶)
+
+### images.getUsedMemory()
+Get used memory (in bytes)
+å¾—åˆ°å›¾åƒå¤„ç†åº“å&nbsp;ç”¨çš„å†…å­˜å¤§å°(å•ä½ä¸ºå­—èŠ‚)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.setLimit" id="apidoc.element.images.setLimit">
+        function <span class="apidocSignatureSpan">images.</span>setLimit
+        <span class="apidocSignatureSpan">(maxWidth, maxHeight)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLimit = function (maxWidth, maxHeight) {
+    _images.maxHeight = maxHeight;
+    _images.maxWidth = maxWidth;
+    return images;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Get width for the image or set width of the image
+èŽ·å–æˆ–è®¾ç½®å›¾åƒå®½åº¦
+
+### .height([height])
+Get height for the image or set height of the image
+èŽ·å–æˆ–è®¾ç½®å›¾åƒé«˜åº¦
+
+### images.<span class="apidocCodeKeywordSpan">setLimit</span>(width, height)
+Set the limit size of each image
+è®¾ç½®åº“å¤„ç†å›¾ç‰‡çš„å¤§å°é™åˆ¶,è®¾ç½®åŽå¯¹æ‰€æœ‰æ–°çš„æ“ä½œç”Ÿæ•ˆ(å¦‚æžœè¶…é™åˆ™æŠ›å‡ºå¼‚å¸¸)
+
+### images.setGCThreshold(value)
+Set the garbage collection threshold
+è®¾ç½®å›¾åƒå¤„ç†åº“è‡ªåŠ¨gcçš„é˜ˆå€¼(å½“*æ–°å¢ž*å†…å­˜ä½¿ç”¨è¶…è¿‡è¯¥é˜ˆå€¼æ—¶ï¼Œæ‰§è¡Œåžƒåœ¾å›žæ”¶)
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.images.Image" id="apidoc.module.images.Image">module images.Image</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.Image" id="apidoc.element.images.Image.Image">
+        function <span class="apidocSignatureSpan">images.</span>Image
+        <span class="apidocSignatureSpan">(width, height)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WrappedImage(width, height) {
+    if (!(this instanceof WrappedImage)) return new WrappedImage(width, height);
+    if (gcThreshold &amp;&amp; nextGCThreshold) {
+        if (images.getUsedMemory() &gt; nextGCThreshold) {
+            images.gc();
+            nextGCThreshold = images.getUsedMemory() + gcThreshold;
+        }
+    }
+    this._handle = new _Image(width, height);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.images.Image.prototype" id="apidoc.module.images.Image.prototype">module images.Image.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.copyFromImage" id="apidoc.element.images.Image.prototype.copyFromImage">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>copyFromImage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyFromImage = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+loadFromBuffer: function(buffer, start, end) {
+    this._handle.loadFromBuffer(buffer, start, end);
+},
+copyFromImage: function(img, x, y, width, height) {
+    if (img instanceof WrappedImage) {
+        img = img._handle;
+    }
+    this._handle.<span class="apidocCodeKeywordSpan">copyFromImage</span>(img, x, y, width, height);
+},
+fill: function(red, green, blue, alpha) {
+    this._handle.fillColor(red, green, blue, alpha);
+},
+draw: function(img, x, y) {
+    if (img instanceof WrappedImage) {
+        img = img._handle;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.draw" id="apidoc.element.images.Image.prototype.draw">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>draw
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">draw = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+var images = require("images");
+
+images("input.jpg")                     //Load image from file
+                                        //åŠ&nbsp;è½½å›¾åƒæ–‡ä»¶
+    .size(400)                          //Geometric scaling the image to 400 pixels width
+                                        //ç­‰æ¯”ç¼©æ”¾å›¾åƒåˆ°400åƒç´&nbsp;å®½
+    .<span class="apidocCodeKeywordSpan">draw</span>(images("logo.png"), 10, 10)   //Drawn logo at coordinates (10,10)
+                                        //åœ¨(10,10)å¤„ç»˜åˆ¶Logo
+    .save("output.jpg", {               //Save the image to a file,whih quality 50
+        quality : 50                    //ä¿å­˜å›¾ç‰‡åˆ°æ–‡ä»¶,å›¾ç‰‡è´¨é‡ä¸º50
+	});
+```
+## Features åŠŸèƒ½ç‰¹æ€§
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.drawImage" id="apidoc.element.images.Image.prototype.drawImage">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>drawImage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">drawImage = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+fill: function(red, green, blue, alpha) {
+    this._handle.fillColor(red, green, blue, alpha);
+},
+draw: function(img, x, y) {
+    if (img instanceof WrappedImage) {
+        img = img._handle;
+    }
+    this._handle.<span class="apidocCodeKeywordSpan">drawImage</span>(img, x, y);
+},
+encode: function(type, config) {
+    var configurator;
+    if (typeof(type) != "number") {
+        type = String(type).toLowerCase();
+        type = (FILE_TYPE_MAP["." + type] || FILE_TYPE_MAP[type]);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.encode" id="apidoc.element.images.Image.prototype.encode">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>encode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Fill image with color
+ä»¥æŒ‡å®šé¢œè‰²å¡«å……å›¾åƒ
+
+### .draw(image, x, y)
+Draw *image* on the current image position( *x* , *y* )
+åœ¨å½“å‰å›¾åƒ( *x* , *y* )ä¸Šç»˜åˆ¶ *image* å›¾åƒ
+
+### .<span class="apidocCodeKeywordSpan">encode</span>(type[, config])
+eg:`images("input.png").encode("jpg", {operation:50})`
+Encode image to buffer, *config* is image setting.
+ä»¥æŒ‡å®šæ&nbsp;¼å¼ç¼–ç&nbsp;å½“å‰å›¾åƒåˆ°Bufferï¼Œconfigä¸ºå›¾ç‰‡è®¾ç½®ï¼Œç›®å‰æ”¯æŒè®¾ç½®JPGå›¾åƒè´¨é‡
+Return buffer
+è¿”å›žå¡«å……å¥½çš„Buffer
+**Note:The operation will cut off the chain**
+**æ³¨æ„:è¯¥æ“ä½œå°†ä¼šåˆ‡æ–­è°ƒç”¨é“¾**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.fill" id="apidoc.element.images.Image.prototype.fill">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>fill
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fill = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Load and decode image from a buffer
+ä»ŽBufferæ•°æ®ä¸­è§£ç&nbsp;å›¾åƒ
+
+### images(image[, x, y, width, height])
+Copy from another image
+ä»Žå¦ä¸€ä¸ªå›¾åƒä¸­å¤åˆ¶åŒºåŸŸæ¥åˆ›å»ºå›¾åƒ
+
+### .<span class="apidocCodeKeywordSpan">fill</span>(red, green, blue[, alpha])
+eg:`images(200, 100).fill(0xff, 0x00, 0x00, 0.5)`
+Fill image with color
+ä»¥æŒ‡å®šé¢œè‰²å¡«å……å›¾åƒ
+
+### .draw(image, x, y)
+Draw *image* on the current image position( *x* , *y* )
+åœ¨å½“å‰å›¾åƒ( *x* , *y* )ä¸Šç»˜åˆ¶ *image* å›¾åƒ
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.fillColor" id="apidoc.element.images.Image.prototype.fillColor">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>fillColor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fillColor = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+copyFromImage: function(img, x, y, width, height) {
+    if (img instanceof WrappedImage) {
+        img = img._handle;
+    }
+    this._handle.copyFromImage(img, x, y, width, height);
+},
+fill: function(red, green, blue, alpha) {
+    this._handle.<span class="apidocCodeKeywordSpan">fillColor</span>(red, green, blue, alpha);
+},
+draw: function(img, x, y) {
+    if (img instanceof WrappedImage) {
+        img = img._handle;
+    }
+    this._handle.drawImage(img, x, y);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.height" id="apidoc.element.images.Image.prototype.height">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>height
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">height = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Set the size of the image,if the height is not specified, then scaling based on the current width and height
+è®¾ç½®å›¾åƒå®½é«˜ï¼Œå¦‚æžœheightæœªæŒ‡å®šï¼Œåˆ™æ&nbsp;¹æ®å½“å‰å®½é«˜ç­‰æ¯”ç¼©æ”¾, é»˜è®¤é‡‡ç”¨ bicubic ç®—æ³•ã€‚
+
+### .width([width])
+Get width for the image or set width of the image
+èŽ·å–æˆ–è®¾ç½®å›¾åƒå®½åº¦
+
+### .<span class="apidocCodeKeywordSpan">height</span>([height])
+Get height for the image or set height of the image
+èŽ·å–æˆ–è®¾ç½®å›¾åƒé«˜åº¦
+
+### images.setLimit(width, height)
+Set the limit size of each image
+è®¾ç½®åº“å¤„ç†å›¾ç‰‡çš„å¤§å°é™åˆ¶,è®¾ç½®åŽå¯¹æ‰€æœ‰æ–°çš„æ“ä½œç”Ÿæ•ˆ(å¦‚æžœè¶…é™åˆ™æŠ›å‡ºå¼‚å¸¸)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.loadFromBuffer" id="apidoc.element.images.Image.prototype.loadFromBuffer">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>loadFromBuffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadFromBuffer = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+}
+this._handle = new _Image(width, height);
+}
+
+prototype = {
+loadFromBuffer: function(buffer, start, end) {
+    this._handle.<span class="apidocCodeKeywordSpan">loadFromBuffer</span>(buffer, start, end);
+},
+copyFromImage: function(img, x, y, width, height) {
+    if (img instanceof WrappedImage) {
+        img = img._handle;
+    }
+    this._handle.copyFromImage(img, x, y, width, height);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.resize" id="apidoc.element.images.Image.prototype.resize">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>resize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resize = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Encoding and save the current image to a *file*, if the *type* is not specified, *type* well be automatically determined according
+ to the *file*, *config* is image setting. eg: `{ operation:50 }`
+ç¼–ç&nbsp;å¹¶ä¿å­˜å½“å‰å›¾åƒåˆ° *file* ,å¦‚æžœtypeæœªæŒ‡å®š,åˆ™æ&nbsp;¹æ® *file* è‡ªåŠ¨åˆ¤æ–­æ–‡ä»¶ç±»åž‹ï¼Œconfigä¸ºå›¾ç‰‡è®¾ç½®ï¼Œç›®å‰æ”¯æŒè®¾ç½®JPGå›¾åƒè´¨é‡
+
+### .size([width[, height]])
+Get size of the image or set the size of the image,if the height is not specified, then scaling based on the current width and height
+èŽ·å–æˆ–è€…è®¾ç½®å›¾åƒå®½é«˜ï¼Œå¦‚æžœheightæœªæŒ‡å®šï¼Œåˆ™æ&nbsp;¹æ®å½“å‰å®½é«˜ç­‰æ¯”ç¼©æ”¾
+
+### .<span class="apidocCodeKeywordSpan">resize</span>(width[, height])
+Set the size of the image,if the height is not specified, then scaling based on the current width and height
+è®¾ç½®å›¾åƒå®½é«˜ï¼Œå¦‚æžœheightæœªæŒ‡å®šï¼Œåˆ™æ&nbsp;¹æ®å½“å‰å®½é«˜ç­‰æ¯”ç¼©æ”¾, é»˜è®¤é‡‡ç”¨ bicubic ç®—æ³•ã€‚
+
+### .width([width])
+Get width for the image or set width of the image
+èŽ·å–æˆ–è®¾ç½®å›¾åƒå®½åº¦
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.save" id="apidoc.element.images.Image.prototype.save">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>save
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">save = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+images("input.jpg")                     //Load image from file
+                                        //åŠ&nbsp;è½½å›¾åƒæ–‡ä»¶
+    .size(400)                          //Geometric scaling the image to 400 pixels width
+                                        //ç­‰æ¯”ç¼©æ”¾å›¾åƒåˆ°400åƒç´&nbsp;å®½
+    .draw(images("logo.png"), 10, 10)   //Drawn logo at coordinates (10,10)
+                                        //åœ¨(10,10)å¤„ç»˜åˆ¶Logo
+    .<span class="apidocCodeKeywordSpan">save</span>("output.jpg", {               //Save the image to a file,whih quality
+ 50
+        quality : 50                    //ä¿å­˜å›¾ç‰‡åˆ°æ–‡ä»¶,å›¾ç‰‡è´¨é‡ä¸º50
+	});
+```
+## Features åŠŸèƒ½ç‰¹æ€§
+
+* Lightweight:no need to install any image processing library.
+* è½»é‡çº§ï¼šæ—&nbsp;éœ€å®‰è£…ä»»ä½•å›¾åƒå¤„ç†åº“ã€‚
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.saveAsync" id="apidoc.element.images.Image.prototype.saveAsync">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>saveAsync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveAsync = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.size" id="apidoc.element.images.Image.prototype.size">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>size
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">size = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Node.jsè½»é‡çº§è·¨å¹³å°å›¾åƒç¼–è§£ç&nbsp;åº“
+
+``` javascript
+var images = require("images");
+
+images("input.jpg")                     //Load image from file
+                                        //åŠ&nbsp;è½½å›¾åƒæ–‡ä»¶
+    .<span class="apidocCodeKeywordSpan">size</span>(400)                          //Geometric scaling the image to 400 pixels width
+                                        //ç­‰æ¯”ç¼©æ”¾å›¾åƒåˆ°400åƒç´&nbsp;å®½
+    .draw(images("logo.png"), 10, 10)   //Drawn logo at coordinates (10,10)
+                                        //åœ¨(10,10)å¤„ç»˜åˆ¶Logo
+    .save("output.jpg", {               //Save the image to a file,whih quality 50
+        quality : 50                    //ä¿å­˜å›¾ç‰‡åˆ°æ–‡ä»¶,å›¾ç‰‡è´¨é‡ä¸º50
+	});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.toBuffer" id="apidoc.element.images.Image.prototype.toBuffer">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>toBuffer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toBuffer = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        type = String(type).toLowerCase();
+        type = (FILE_TYPE_MAP["." + type] || FILE_TYPE_MAP[type]);
+    }
+    if (config != undefined) {
+        configurator = CONFIG_GENERATOR[type];
+        config = configurator &amp;&amp; configurator(config);
+    }
+    return this._handle.<span class="apidocCodeKeywordSpan">toBuffer</span>(type, config);
+},
+save: function(file, type, config) {
+    if (type &amp;&amp; typeof(type) == "object") {
+        config = type;
+        type = undefined;
+    }
+    fs.writeFileSync(file, this.encode(type || path.extname(file), config));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.Image.prototype.width" id="apidoc.element.images.Image.prototype.width">
+        function <span class="apidocSignatureSpan">images.Image.prototype.</span>width
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">width = function () {
+    var ret = fn.apply(this, slice.call(arguments, 0));
+    return ret === undefined ? this : ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Get size of the image or set the size of the image,if the height is not specified, then scaling based on the current width and height
+èŽ·å–æˆ–è€…è®¾ç½®å›¾åƒå®½é«˜ï¼Œå¦‚æžœheightæœªæŒ‡å®šï¼Œåˆ™æ&nbsp;¹æ®å½“å‰å®½é«˜ç­‰æ¯”ç¼©æ”¾
+
+### .resize(width[, height])
+Set the size of the image,if the height is not specified, then scaling based on the current width and height
+è®¾ç½®å›¾åƒå®½é«˜ï¼Œå¦‚æžœheightæœªæŒ‡å®šï¼Œåˆ™æ&nbsp;¹æ®å½“å‰å®½é«˜ç­‰æ¯”ç¼©æ”¾, é»˜è®¤é‡‡ç”¨ bicubic ç®—æ³•ã€‚
+
+### .<span class="apidocCodeKeywordSpan">width</span>([width])
+Get width for the image or set width of the image
+èŽ·å–æˆ–è®¾ç½®å›¾åƒå®½åº¦
+
+### .height([height])
+Get height for the image or set height of the image
+èŽ·å–æˆ–è®¾ç½®å›¾åƒé«˜åº¦
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.images.binding" id="apidoc.module.images.binding">module images.binding</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.images.binding.Image" id="apidoc.element.images.binding.Image">
+        function <span class="apidocSignatureSpan">images.binding.</span>Image
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Image() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.images.binding.gc" id="apidoc.element.images.binding.gc">
+        function <span class="apidocSignatureSpan">images.binding.</span>gc
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function gc() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Set the garbage collection threshold
+è®¾ç½®å›¾åƒå¤„ç†åº“è‡ªåŠ¨gcçš„é˜ˆå€¼(å½“*æ–°å¢ž*å†…å­˜ä½¿ç”¨è¶…è¿‡è¯¥é˜ˆå€¼æ—¶ï¼Œæ‰§è¡Œåžƒåœ¾å›žæ”¶)
+
+### images.getUsedMemory()
+Get used memory (in bytes)
+å¾—åˆ°å›¾åƒå¤„ç†åº“å&nbsp;ç”¨çš„å†…å­˜å¤§å°(å•ä½ä¸ºå­—èŠ‚)
+
+### images.<span class="apidocCodeKeywordSpan">gc</span>()
+Forced call garbage collection
+å¼ºåˆ¶è°ƒç”¨V8çš„åžƒåœ¾å›žæ”¶æœºåˆ¶
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
