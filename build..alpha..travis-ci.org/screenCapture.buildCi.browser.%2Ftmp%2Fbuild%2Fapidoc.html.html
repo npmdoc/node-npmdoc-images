@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.images.images">
+            function <span class="apidocSignatureSpan"></span>images
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.images.Image">
             function <span class="apidocSignatureSpan">images.</span>Image
             <span class="apidocSignatureSpan">(width, height)</span>
@@ -396,6 +405,31 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.images" id="apidoc.module.images">module images</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.images.images" id="apidoc.element.images.images">
+        function <span class="apidocSignatureSpan"></span>images
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function images(obj) {
+    var constructor;
+    if (obj instanceof Buffer) {
+        constructor = images.loadFromBuffer;
+    } else if (obj instanceof WrappedImage) {
+        constructor = images.copyFromImage;
+    } else if (typeof(obj) == "string") {
+        constructor = images.loadFromFile;
+    } else {
+        constructor = images.createImage;
+    }
+    return constructor.apply(images, slice.call(arguments, 0));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
